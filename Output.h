@@ -106,7 +106,22 @@ public:
 
     void debug(string input)
     {
-        m_LogManager->Log((uint32_t)Ashita::LogLevel::Debug, pluginName, input.c_str());
+        string working = input;
+        int index      = input.find("$H");
+        while (index != string::npos)
+        {
+            working = working.replace(index, 2, "");
+            index   = working.find("$H");
+        }
+
+        index = input.find("$R");
+        while (index != string::npos)
+        {
+            working = working.replace(index, 2, "");
+            index   = working.find("$R");
+        }
+
+        m_LogManager->Log((uint32_t)Ashita::LogLevel::Debug, pluginName, working.c_str());
     }
 
     void debug_f(const char* input, ...)
