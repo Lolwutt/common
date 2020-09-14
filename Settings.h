@@ -309,13 +309,13 @@ public:
         long Size  = inputStream.tellg();
         Buffer = new char[Size + 1];
         inputStream.seekg(0, ios::beg);
-        inputStream.read(FileBuffer, Size);
+        inputStream.read(Buffer, Size);
         Buffer[Size] = '\0';
 
         xml_document<>* DocBuffer = new xml_document<>();
         try
         {
-            DocBuffer->parse<0>(FileBuffer);
+            DocBuffer->parse<0>(Buffer);
         }
         catch (const rapidxml::parse_error& e)
         {
