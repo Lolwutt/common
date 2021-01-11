@@ -5,7 +5,7 @@
 #pragma once
 #endif
 
-#include "C:\Program Files (x86)\Ashita 4\plugins\sdk\Ashita.h"
+#include "C:\Ashita 4\plugins\sdk\Ashita.h"
 #define MAX_PACKET_SIZE 508
 
 class safePacketInjector

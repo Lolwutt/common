@@ -17,4 +17,18 @@
 
 #define CheckArg(a,b) (argcount > a) && (_stricmp(args[a].c_str(), b) == 0)
 
+
+static std::string FormatName(std::string name)
+{
+    std::string newName;
+    for (int x = 0; x < name.length(); x++)
+    {
+        if (x == 0)
+            newName += toupper(name[x]);
+        else
+            newName += tolower(name[x]);
+    }
+    return newName;
+}
+
 #endif _UTILITIES_H_

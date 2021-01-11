@@ -5,7 +5,7 @@
 #pragma once
 #endif
 
-#include "C:\Program Files (x86)\Ashita 4\plugins\sdk\Ashita.h"
+#include "C:\Ashita 4\plugins\sdk\Ashita.h"
 #include <iostream>
 #include <string>
 
@@ -45,7 +45,7 @@ public:
         }
 
         stringstream output;
-        output << Ashita::Chat::Header(pluginName) << Ashita::Chat::Colors::Reset << working;
+        output << Ashita::Chat::Header(pluginName) << working;
         m_AshitaCore->GetChatManager()->Write(ERROR_COLOR, false, output.str().c_str());
 
         stringstream error;
@@ -88,7 +88,7 @@ public:
         }
 
         stringstream output;
-        output << Ashita::Chat::Header(pluginName) << Ashita::Chat::Colors::Reset << working;
+        output << Ashita::Chat::Header(pluginName) << working;
 
         m_AshitaCore->GetChatManager()->Write(MESSAGE_COLOR, false, output.str().c_str());
     }
